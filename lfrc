@@ -85,9 +85,10 @@ cmd runit ${{
 	pwd > /tmp/last_dir
 		echo $'\n'"running $fx"
 		case $f in
-		*.do) ~/bin/stata-mp -b -q $f && bat $(basename $f | choose 0 -f "\.").log;;
+		*.do) stata-mp -b -q $f && bat $(basename $f | choose 0 -f "\.").log;;
 	*.py) python $fx;;
 	*.rs) cargo run ;;
+	*.sh) run $fx;;
 	esac
 }}
 # define a custom 'rename' command without prompt for overwrite
@@ -267,9 +268,9 @@ map gv cd /mnt/da/Dropbox/Apps/Overleaf/hedge_fund_CSR/
 map go cd /mnt/da/Dropbox/Apps/Overleaf/CO_draft
 map gr cd /mnt/da/Dropbox/Raphale_Leo/Hedge_fund
 map g0 cd /mnt/da/Dropbox/Apps/Overleaf/the_esg_management_style/
-map g1 cd /mnt/da/Dropbox/WingWah-Leo/1.Trademarks/Paper/
+map g1 cd /mnt/da/Dropbox/WingWah-Leo/1.Trademarks/
 map g2 cd /mnt/da/Dropbox/WingWah-Leo/2.process_innovation/paper
-map g3 cd /mnt/da/Dropbox/WingWah-Leo/3.green_innovation/paper1_general
+map g3 cd /mnt/da/Dropbox/WingWah-Leo/3.green_innovation/cluster_ceo
 map g4 cd /mnt/da/Dropbox/WingWah-Leo/4.tm_industry/paper
 map g5 cd /mnt/da/Dropbox/WingWah-Leo/5.toxicity/paper
 map gs cd /mnt/da/Dropbox/scripts

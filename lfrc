@@ -214,7 +214,7 @@ map st :{{
 }}
 
 map sn :{{
-	set reverse;
+	set reverse false;
 	set sortby natural;
 	set info ;
 	top

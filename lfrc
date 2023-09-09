@@ -1,6 +1,6 @@
 # interpreter for shell commands (needs to be POSIX compatible)
 set shell sh
-set icons on
+set icons true
 # set color256 on
 
 # set '-eu' options for shell commands
@@ -11,7 +11,7 @@ set icons on
 # is used selectively within individual commands as it can be limiting at
 # times.
 set shellopts '-eu'
-set preview on
+set preview true
 set previewer ~/.config/lf/previewer.sh
 
 # set internal field separator (IFS) to "\n" for shell commands
@@ -21,7 +21,7 @@ set previewer ~/.config/lf/previewer.sh
 # commands accordingly.
 set ifs "\n"
 
-set reverse on
+set reverse true
 set sortby time
 
 # leave some space at the top and the bottom of the screen

@@ -31,7 +31,7 @@ set scrolloff 10
 map <enter> shell
 
 # execute current file (must be executable)
-map x $$f
+map x runit $$f
 map X !$f
 
 # dedicated keys for file opener actions
@@ -82,14 +82,9 @@ cmd open ${{
 
 cmd runit ${{
 # set -f
-	pwd > /tmp/last_dir
-		echo $'\n'"running $fx"
-		case $f in
-		*.do) stata-mp -b -q $f && bat $(basename $f | choose 0 -f "\.").log;;
-	*.py) python $fx;;
-	*.rs) cargo run ;;
-	*.sh) run $fx;;
-	esac
+pwd > /tmp/last_dir
+echo $'\n'"running $fx"
+run $fx
 }}
 # define a custom 'rename' command without prompt for overwrite
 cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
@@ -193,7 +188,7 @@ cmd echoit ${{
 		}}
 
 cmd drag ${{
-	dragon-drag-and-drop $fx
+	dragon-drop $fx
 }}
 
 cmd rpath ${{
@@ -272,7 +267,8 @@ map g1 cd /mnt/da/Dropbox/WingWah-Leo/1.Trademarks/
 map g2 cd /mnt/da/Dropbox/WingWah-Leo/2.process_innovation/paper
 map g3 cd /mnt/da/Dropbox/WingWah-Leo/3.green_innovation/cluster_ceo
 map g4 cd /mnt/da/Dropbox/WingWah-Leo/4.tm_industry/paper
-map g5 cd /mnt/da/Dropbox/WingWah-Leo/5.toxicity/paper
+map g5 cd /mnt/da/Dropbox/WingWah-Leo/5.AI_patents/
+map g6 cd /mnt/da/Dropbox/WingWah-Leo/6.toxicity/paper
 map gs cd /mnt/da/Dropbox/scripts
 map gl cd /mnt/da/Dropbox/With_Lixiong/paper_latex/
 map gm cd /mnt
